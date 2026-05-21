@@ -29,7 +29,9 @@ export const createJob = async (req, res) => {
             experience,
             location,
 
-            image: req.file ? req.file.filename : ""
+           image: req.file 
+    ? `https://jobhub-backend-f5u9.onrender.com/uploads/${req.file.filename}` 
+    : ""
         });
 
         res.status(201).json({
